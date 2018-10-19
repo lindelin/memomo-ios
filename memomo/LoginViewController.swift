@@ -8,14 +8,46 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.setFieldDelegate()
     }
     
+    // キーボードをしまう
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    // MARK: - Setup
+    func setFieldDelegate() {
+        email.delegate = self
+        password.delegate = self
+    }
+    
+    // MARK: - Doneボタン押下でキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 1:
+            // タグが0ならsecondTextFieldにフォーカスを当てる
+            password.becomeFirstResponder()
+            break
+        case 2:
+            // タグが1ならキーボードを閉じる
+            textField.resignFirstResponder()
+            break
+        default:
+            break
+        }
+        return true
+    }
 
     /*
     // MARK: - Navigation

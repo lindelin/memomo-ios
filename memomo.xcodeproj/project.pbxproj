@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17149D8B9CA1E2C085AB7B31 /* Pods_memomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC03D18C77355A061399D77 /* Pods_memomo.framework */; };
 		F253DE3521786A660071AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253DE3421786A660071AC8D /* AppDelegate.swift */; };
 		F253DE3A21786A660071AC8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F253DE3821786A660071AC8D /* Main.storyboard */; };
 		F253DE3C21786A670071AC8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F253DE3B21786A670071AC8D /* Assets.xcassets */; };
 		F253DE3F21786A670071AC8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F253DE3D21786A670071AC8D /* LaunchScreen.storyboard */; };
 		F253DE47217871430071AC8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253DE46217871430071AC8D /* LoginViewController.swift */; };
+		F2929FB32179DA9300D9236F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2929FB22179DA9300D9236F /* AuthService.swift */; };
+		F29BCC922179D14A0061181D /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BCC912179D14A0061181D /* OAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04DAA29C485AD924C275ED05 /* Pods-memomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memomo.debug.xcconfig"; path = "Target Support Files/Pods-memomo/Pods-memomo.debug.xcconfig"; sourceTree = "<group>"; };
+		CE23D4AC1C32FA8341DD0844 /* Pods-memomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memomo.release.xcconfig"; path = "Target Support Files/Pods-memomo/Pods-memomo.release.xcconfig"; sourceTree = "<group>"; };
+		DEC03D18C77355A061399D77 /* Pods_memomo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memomo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F253DE3121786A660071AC8D /* memomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F253DE3421786A660071AC8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F253DE3921786A660071AC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		F253DE3E21786A670071AC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F253DE4021786A670071AC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F253DE46217871430071AC8D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F2929FB22179DA9300D9236F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F29BCC912179D14A0061181D /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17149D8B9CA1E2C085AB7B31 /* Pods_memomo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BF98E8CDF65E144E9FEBD42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEC03D18C77355A061399D77 /* Pods_memomo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A00D65983A9944DDA042E8BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04DAA29C485AD924C275ED05 /* Pods-memomo.debug.xcconfig */,
+				CE23D4AC1C32FA8341DD0844 /* Pods-memomo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F253DE2821786A660071AC8D = {
 			isa = PBXGroup;
 			children = (
 				F253DE3321786A660071AC8D /* memomo */,
 				F253DE3221786A660071AC8D /* Products */,
+				A00D65983A9944DDA042E8BF /* Pods */,
+				7BF98E8CDF65E144E9FEBD42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +82,8 @@
 		F253DE3321786A660071AC8D /* memomo */ = {
 			isa = PBXGroup;
 			children = (
+				F2929FB12179DA4F00D9236F /* Serives */,
+				F29BCC902179D11D0061181D /* Models */,
 				F253DE3421786A660071AC8D /* AppDelegate.swift */,
 				F253DE3821786A660071AC8D /* Main.storyboard */,
 				F253DE3B21786A670071AC8D /* Assets.xcassets */,
@@ -64,6 +94,22 @@
 			path = memomo;
 			sourceTree = "<group>";
 		};
+		F2929FB12179DA4F00D9236F /* Serives */ = {
+			isa = PBXGroup;
+			children = (
+				F2929FB22179DA9300D9236F /* AuthService.swift */,
+			);
+			path = Serives;
+			sourceTree = "<group>";
+		};
+		F29BCC902179D11D0061181D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F29BCC912179D14A0061181D /* OAuth.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F253DE4321786A670071AC8D /* Build configuration list for PBXNativeTarget "memomo" */;
 			buildPhases = (
+				D0A437498CFF5AB3FD2335DF /* [CP] Check Pods Manifest.lock */,
 				F253DE2D21786A660071AC8D /* Sources */,
 				F253DE2E21786A660071AC8D /* Frameworks */,
 				F253DE2F21786A660071AC8D /* Resources */,
+				5CB9E30A69DABF0D2FE82793 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +178,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5CB9E30A69DABF0D2FE82793 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-memomo/Pods-memomo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-memomo/Pods-memomo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0A437498CFF5AB3FD2335DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-memomo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F253DE2D21786A660071AC8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29BCC922179D14A0061181D /* OAuth.swift in Sources */,
 				F253DE47217871430071AC8D /* LoginViewController.swift in Sources */,
 				F253DE3521786A660071AC8D /* AppDelegate.swift in Sources */,
+				F2929FB32179DA9300D9236F /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +381,7 @@
 		};
 		F253DE4421786A670071AC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04DAA29C485AD924C275ED05 /* Pods-memomo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +400,7 @@
 		};
 		F253DE4521786A670071AC8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE23D4AC1C32FA8341DD0844 /* Pods-memomo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

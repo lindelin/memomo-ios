@@ -1,0 +1,6 @@
+framework module Pods_memomo {
+  umbrella header "Pods-memomo-umbrella.h"
+
+  export *
+  module * { export * }
+}
