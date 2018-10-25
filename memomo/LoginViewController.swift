@@ -49,6 +49,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    @IBAction func login(_ sender: UIButton) {
+        let email = self.email.text ?? ""
+        let password = self.password.text ?? ""
+        OAuth.login(email: email, password: password) { (oauth) in
+            if let oauth = oauth {
+                oauth.save()
+                self.toMemoListView()
+            } else {
+                self.showLoginAlert()
+            }
+        }
+    }
+    
+    func toMemoListView() {
+        if self.presentingViewController == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainController = storyboard.instantiateViewController(withIdentifier: "MemoListViewController") as! UITableViewController
+            mainController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            self.present(mainController, animated: true, completion: nil)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - ログイン失敗
+    func showLoginAlert() {
+        let loginErrorAlert = UIAlertController(title: "Login Error", message: "Login Failed", preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            loginErrorAlert.dismiss(animated: true, completion: nil)
+        }
+        
+        loginErrorAlert.addAction(okButton)
+        
+        self.present(loginErrorAlert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

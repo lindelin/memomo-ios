@@ -22,6 +22,22 @@ struct OAuth: Codable {
         case accessToken = "access_token"
     }
     
+    func save() {
+        UserDefaults.standard.setValue(self.accessToken, forKey: CodingKeys.accessToken.rawValue)
+        UserDefaults.standard.setValue(self.tokenType, forKey: CodingKeys.tokenType.rawValue)
+    }
+    
+    static func token() -> String {
+        let type = UserDefaults.standard.string(forKey: CodingKeys.tokenType.rawValue) ?? ""
+        let token = UserDefaults.standard.string(forKey: CodingKeys.accessToken.rawValue) ?? ""
+        
+        if token == "" {
+            return ""
+        } else {
+            return "\(type) \(token)"
+        }
+    }
+    
     static func login(email: String, password: String, callback: @escaping (OAuth?) -> Void) {
         let provider = MoyaProvider<OAuthService>()
         provider.request(.login(email: email, password: password)) { (result) in

@@ -14,11 +14,11 @@ enum OAuthService {
 }
 
 extension OAuthService: TargetType {
-    var baseURL: URL { return URL(string: "http://memomo.test/oauth/token")! }
+    var baseURL: URL { return URL(string: "http://memomo.test")! }
     var path: String {
         switch self {
         case .login:
-            return "/"
+            return "/oauth/token"
         }
     }
     var method: Moya.Method {
@@ -37,7 +37,7 @@ extension OAuthService: TargetType {
                 "username": email,
                 "password": password,
                 "scope": "*"
-                ], encoding: URLEncoding.queryString)
+                ], encoding: JSONEncoding.default)
         }
     }
     var sampleData: Data {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17149D8B9CA1E2C085AB7B31 /* Pods_memomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC03D18C77355A061399D77 /* Pods_memomo.framework */; };
+		F22D963B217DC3C100072114 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22D963A217DC3C100072114 /* MemoListViewController.swift */; };
 		F253DE3521786A660071AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253DE3421786A660071AC8D /* AppDelegate.swift */; };
 		F253DE3A21786A660071AC8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F253DE3821786A660071AC8D /* Main.storyboard */; };
 		F253DE3C21786A670071AC8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F253DE3B21786A670071AC8D /* Assets.xcassets */; };
@@ -15,12 +16,16 @@
 		F253DE47217871430071AC8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253DE46217871430071AC8D /* LoginViewController.swift */; };
 		F2929FB32179DA9300D9236F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2929FB22179DA9300D9236F /* AuthService.swift */; };
 		F29BCC922179D14A0061181D /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BCC912179D14A0061181D /* OAuth.swift */; };
+		F2BF1CC12181575C00378B64 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF1CC02181575C00378B64 /* Memo.swift */; };
+		F2BF1CC321815C7F00378B64 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF1CC221815C7F00378B64 /* NetworkService.swift */; };
+		F2BF1CC621816B2E00378B64 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF1CC521816B2E00378B64 /* MemoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04DAA29C485AD924C275ED05 /* Pods-memomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memomo.debug.xcconfig"; path = "Target Support Files/Pods-memomo/Pods-memomo.debug.xcconfig"; sourceTree = "<group>"; };
 		CE23D4AC1C32FA8341DD0844 /* Pods-memomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memomo.release.xcconfig"; path = "Target Support Files/Pods-memomo/Pods-memomo.release.xcconfig"; sourceTree = "<group>"; };
 		DEC03D18C77355A061399D77 /* Pods_memomo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memomo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F22D963A217DC3C100072114 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 		F253DE3121786A660071AC8D /* memomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F253DE3421786A660071AC8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F253DE3921786A660071AC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +35,9 @@
 		F253DE46217871430071AC8D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F2929FB22179DA9300D9236F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F29BCC912179D14A0061181D /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		F2BF1CC02181575C00378B64 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		F2BF1CC221815C7F00378B64 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F2BF1CC521816B2E00378B64 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +92,14 @@
 			children = (
 				F2929FB12179DA4F00D9236F /* Serives */,
 				F29BCC902179D11D0061181D /* Models */,
+				F2BF1CC421816ACB00378B64 /* Cells */,
 				F253DE3421786A660071AC8D /* AppDelegate.swift */,
 				F253DE3821786A660071AC8D /* Main.storyboard */,
 				F253DE3B21786A670071AC8D /* Assets.xcassets */,
 				F253DE3D21786A670071AC8D /* LaunchScreen.storyboard */,
 				F253DE4021786A670071AC8D /* Info.plist */,
 				F253DE46217871430071AC8D /* LoginViewController.swift */,
+				F22D963A217DC3C100072114 /* MemoListViewController.swift */,
 			);
 			path = memomo;
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F2929FB22179DA9300D9236F /* AuthService.swift */,
+				F2BF1CC221815C7F00378B64 /* NetworkService.swift */,
 			);
 			path = Serives;
 			sourceTree = "<group>";
@@ -106,8 +117,17 @@
 			isa = PBXGroup;
 			children = (
 				F29BCC912179D14A0061181D /* OAuth.swift */,
+				F2BF1CC02181575C00378B64 /* Memo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F2BF1CC421816ACB00378B64 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F2BF1CC521816B2E00378B64 /* MemoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F29BCC922179D14A0061181D /* OAuth.swift in Sources */,
+				F22D963B217DC3C100072114 /* MemoListViewController.swift in Sources */,
 				F253DE47217871430071AC8D /* LoginViewController.swift in Sources */,
+				F2BF1CC12181575C00378B64 /* Memo.swift in Sources */,
 				F253DE3521786A660071AC8D /* AppDelegate.swift in Sources */,
 				F2929FB32179DA9300D9236F /* AuthService.swift in Sources */,
+				F2BF1CC321815C7F00378B64 /* NetworkService.swift in Sources */,
+				F2BF1CC621816B2E00378B64 /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
