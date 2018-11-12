@@ -54,6 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = self.password.text ?? ""
         OAuth.login(email: email, password: password) { (oauth) in
             if let oauth = oauth {
+                print(oauth)
                 oauth.save()
                 self.toMemoListView()
             } else {

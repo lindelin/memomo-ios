@@ -85,7 +85,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Memo List View Controller-->
+        <!--Memo-->
         <scene sceneID="Npb-c1-HAf">
             <objects>
                 <tableViewController storyboardIdentifier="MemoListViewController" id="JDN-T9-Ja1" customClass="MemoListViewController" customModule="memomo" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,10 +160,29 @@
                             <outlet property="delegate" destination="JDN-T9-Ja1" id="khQ-5P-24S"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Memo" id="oCZ-Ev-pub"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rob-Gx-Fmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.79999999999995" y="770.68965517241384"/>
+            <point key="canvasLocation" x="1079.2" y="751.47783251231533"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TBM-tl-QHD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3j0-e4-5r7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WMC-si-UeX">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JDN-T9-Ja1" kind="relationship" relationship="rootViewController" id="OXM-Ev-HBl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7c-HA-QLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="751.47783251231533"/>
         </scene>
     </scenes>
 </document>

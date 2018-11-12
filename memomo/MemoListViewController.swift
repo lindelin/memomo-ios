@@ -14,6 +14,9 @@ class MemoListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.loadData), for: .valueChanged)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,11 +27,12 @@ class MemoListViewController: UITableViewController {
     }
     
     // MARK: - データ読み込み
-    func loadData() {
+    @objc func loadData() {
         Memo.list { (memos) in
             if let memos = memos {
                 self.memos = memos
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
             }
         }
     }
